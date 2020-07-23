@@ -1,0 +1,48 @@
+$light-colors: () !default;
+$light-colors: map-merge(
+  (
+    'green': #4cbb17,
+    'yellow': yellow,
+    'red': #e60000,
+  ),
+  $light-colors
+);
+
+@each $colorName, $colorValue in $light-colors {
+  .text-#{$colorName} {
+    color: $colorValue;
+    text-shadow: 0px 0px 30px $colorValue;
+  }
+
+  .light-#{$colorName} {
+    background-color: $colorValue;
+    box-shadow: 0px 0px 30px $colorValue;
+  }
+}
+
+.traffic-light {
+  width: 10px;
+  height: 10px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.text-white {
+  color: white;
+}
+
+.bg-black {
+  background: black;
+}
+
+.no-light {
+  background: gray;
+  box-shadow: none;
+}
+
+.timer {
+  font-size: 38px;
+  font-family: monospace;
+}
